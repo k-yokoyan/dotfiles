@@ -1,0 +1,5 @@
+#MySQLでViモード
+#see http://matome.naver.jp/odai/2139173523345137201/2139182364396088103
+$if mysql
+set editing-mode vi
+$endif
