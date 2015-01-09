@@ -184,6 +184,7 @@ NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides'
 NeoBundle 'git://github.com/miripiruni/csscomb-for-vim.git'
 NeoBundle 'https://github.com/mhinz/vim-startify'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'https://github.com/yegappan/mru'
 
 "
 "分割ウィンドウ時に移動を行う設定
@@ -295,12 +296,23 @@ let g:startify_bookmarks = ['~/.vimrc']
 " --------------------------------------------------------------------------
 " vim-indent-guides
 " https://github.com/nathanaelkane/vim-indent-guides
-let g:indent_guides_auto_colors=1
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_guide_size=1
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
 
 " --------------------------------------------------------------------------
 " vim-taglist
 let Tlist_Show_One_File = 1 "現在編集中のソースのタグしか表示しない
 let Tlist_Exit_OnlyWiindow = 1 "taglist が最後のウインドウなら vim を閉じる
 let g:tlist_php_settings = 'php;c:class;d:constant;f:function'
+
+" --------------------------------------------------------------------------
+" mru.vim
+" 保存するファイル履歴の数
+let MRU_Max_Entries = 20
+" ファイルリストウィンドウの高さ
+let MRU_Window_Height = 8
+" カレントのウィンドウに表示するか
+let MRU_Use_Current_Windo = 1
+" ファイル選択時、ファイルリストのウィンドウを閉じるか
+let MRU_Auto_Close = 1
