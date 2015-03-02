@@ -41,9 +41,6 @@ set clipboard=unnamed
 "---------------------------------------------------------------------------
 " GUI固有ではない画面表示の設定:
 
-
-" カラースキーマ
-colorscheme elflord
 " 行番号を非表示 (number:表示)
 set number
 " ルーラーを表示 (noruler:非表示)
@@ -176,7 +173,7 @@ if neobundle#exists_not_installed_bundles()
 endif
 
 NeoBundle 'https://github.com/Shougo/neobundle.vim'
-NeoBundle 'https://github.com/Shougo/vimproc.vim'
+"NeoBundle 'https://github.com/Shougo/vimproc.vim'
 NeoBundle 'https://github.com/kana/vim-fakeclip'
 NeoBundle 'https://github.com/scrooloose/syntastic'
 NeoBundle 'https://github.com/Shougo/neocomplcache.vim'
@@ -187,6 +184,7 @@ NeoBundle 'git://github.com/miripiruni/csscomb-for-vim.git'
 NeoBundle 'https://github.com/mhinz/vim-startify'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'https://github.com/yegappan/mru'
+NeoBundle 'tomasr/molokai'
 
 "
 "分割ウィンドウ時に移動を行う設定
@@ -196,6 +194,14 @@ noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-L> <C-W>l
 
+"------------------------------------
+" colorscheme
+" ------------------------------------
+syntax on
+colorscheme molokai
+
+" iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
+highlight Normal ctermbg=none
 
 "---------------------------------------------------------------------------
 "
