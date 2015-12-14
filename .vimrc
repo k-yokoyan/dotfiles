@@ -161,7 +161,6 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 filetype plugin indent on     " Required!
 
@@ -187,6 +186,13 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle "ctrlpvim/ctrlp.vim"
+
+NeoBundleCheck
+
+call neobundle#end()
+
 
 "
 "分割ウィンドウ時に移動を行う設定
@@ -234,7 +240,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " let g:syntastic_php_checkers = ['php', 'phpmd']
 let g:syntastic_php_checkers = ['php']
 
-" let g:syntastic_javascript_checkers = ['jsl']
+"let g:syntastic_javascript_checkers = ['jsl']
 let g:syntastic_javascript_checkers = ['jsl', 'gjslint']
 if (has('mac'))
   let g:syntastic_javascript_jsl_conf = $MY_VIMRUNTIME . '/tools/jsl.osx.conf'
@@ -265,7 +271,13 @@ let g:neocomplcache_enable_camel_case_completion  =  1
 let g:neocomplcache_max_list = 20
 
 " シンタックスをキャッシュするときの最小文字長
-let g:neocomplcache_min_syntax_length = 2
+let g:neocomplcache_min_syntax_length = 3
+
+"日本語を補完候補として取得しないようにする
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " スニペットを展開する。スニペットが関係しないところでは行末まで削除
 imap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-o>D"
@@ -346,3 +358,10 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+
+" --------------------------------------------------------------------------
+" nerdtree.vim
+"
+" vim起動時にnerdtreeを起動
+"autocmd VimEnter * execute 'NERDTree'
