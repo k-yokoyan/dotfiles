@@ -15,8 +15,9 @@ set smartcase
 "
 " タブの画面上での幅
 set tabstop=4
-" タブをスペースに展開しない (noexpandtab:展開しない)
+" タブをスペースに展開するか (noexpandtab:展開しない)
 set expandtab
+"set noexpandtab
 " 自動的にインデントする (noautoindent:インデントしない)
 set autoindent
 " バックスペースでインデントや改行を削除できるようにする
@@ -29,8 +30,6 @@ set showmatch
 set wildmenu
 " テキスト挿入中の自動折り返しを日本語に対応させる
 set formatoptions+=mM
-" タブをスペースで入力
-set expandtab
 " 自動生成されるインデントの文字数
 set shiftwidth=4
 " タブを押したときの幅
