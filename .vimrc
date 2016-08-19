@@ -36,6 +36,8 @@ set shiftwidth=4
 set softtabstop=4
 " クリップボードを利用する
 set clipboard=unnamed
+" 全角記号を全角幅にする
+set ambiwidth=double
 
 "---------------------------------------------------------------------------
 " GUI固有ではない画面表示の設定:
@@ -187,6 +189,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle "ctrlpvim/ctrlp.vim"
+NeoBundle "Rican7/php-doc-modded"
 
 NeoBundleCheck
 
@@ -247,7 +250,8 @@ else
   let g:syntastic_javascript_jsl_conf = $MY_VIMRUNTIME . '/tools/jsl.conf'
 endif
 let g:syntastic_json_checkers = ['jsonlint']
-
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 
 "---------------------------------------------------------------------------
 "neocomplcache (ネオコン)
@@ -364,3 +368,11 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 "
 " vim起動時にnerdtreeを起動
 "autocmd VimEnter * execute 'NERDTree'
+"
+
+" PHP-Doc-Modded
+" https://github.com/Rican7/php-doc-modded
+source $MY_VIMRUNTIME/bundle/php-doc-modded/plugin/php-doc.vim 
+inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i 
+nnoremap <C-D> :call PhpDocSingle()<CR> 
+vnoremap <C-D> :call PhpDocRange()<CR> 
