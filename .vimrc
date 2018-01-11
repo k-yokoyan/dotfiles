@@ -400,3 +400,8 @@ source $MY_VIMRUNTIME/bundle/php-doc-modded/plugin/php-doc.vim
 inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-D> :call PhpDocSingle()<CR> 
 vnoremap <C-D> :call PhpDocRange()<CR> 
+
+
+" vim-tags
+" @see https://qiita.com/soramugi/items/7014c866b705e2cd0b95
+au BufNewFile,BufRead *.php let g:vim_tags_project_tags_command = "ctags --languages=php -f ~/php.tags `pwd` 2>/dev/null &"
