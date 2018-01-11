@@ -80,6 +80,36 @@ set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 
 "---------------------------------------------------------------------------
+" ctags関連 
+" 拡張子で読み込みタグ変更                                                      
+au BufNewFile,BufRead *.php set tags+=$HOME/php.tags  
+
+" tagsジャンプの時に複数ある時は一覧表示したいのでキーバインド変更
+nnoremap <C-]> g<C-]> 
+
+" tag stackを一つ戻る
+nnoremap <C-[> <C-t> 
+
+"---------------------------------------------------------------------------
+" PHP設定
+" " $VIMRUNTIME/syntax/php.vim
+autocmd BufNewFile,BufRead *.ctp set filetype=php
+let g:php_baselib       = 1
+let g:php_htmlInStrings = 1
+let g:php_noShortTags   = 1
+let g:php_sql_query     = 1
+" <? をハイライト除外にする
+let g:php_noShortTags   = 1
+" カッコが閉じていない場合にハイライト
+let g:php_parent_error_close = 1
+
+
+"---------------------------------------------------------------------------
+" DB設定
+" $VIMRUNTIME/syntax/sql.vim
+let g:sql_type_default = 'mysql' " MySQLの場合
+
+"---------------------------------------------------------------------------
 " その他
 "
 " deleteキーを使えるようにする
@@ -181,7 +211,7 @@ NeoBundle 'https://github.com/Shougo/neocomplcache.vim'
 NeoBundle 'https://github.com/tell-k/vim-browsereload-mac'
 NeoBundle 'https://github.com/oppara/taglist.vim'
 NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides'
-NeoBundle 'git://github.com/miripiruni/csscomb-for-vim.git'
+"NeoBundle 'git://github.com/miripiruni/csscomb-for-vim.git'
 NeoBundle 'https://github.com/mhinz/vim-startify'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tomasr/molokai'
@@ -190,19 +220,13 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle "ctrlpvim/ctrlp.vim"
 NeoBundle "Rican7/php-doc-modded"
+NeoBundle 'rking/ag.vim'
+NeoBundle 'szw/vim-tags'
 
 NeoBundleCheck
 
 call neobundle#end()
 
-
-"
-"分割ウィンドウ時に移動を行う設定
-"
-noremap <C-H> <C-W>h
-noremap <C-J> <C-W>j
-noremap <C-K> <C-W>k
-noremap <C-L> <C-W>l
 
 "------------------------------------
 " colorscheme

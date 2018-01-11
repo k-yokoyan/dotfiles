@@ -1,6 +1,8 @@
+--append=yes
+--recurse=yes
 
 --langmap=PHP:.php.inc
---php-kinds=cfit
+--php-kinds=cfd
 
 --langdef=js
 --langmap=js:.js
