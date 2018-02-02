@@ -96,13 +96,9 @@ nnoremap <C-[> <C-t>
 autocmd BufNewFile,BufRead *.ctp set filetype=php
 let g:php_baselib       = 1
 let g:php_htmlInStrings = 1
-let g:php_noShortTags   = 1
 let g:php_sql_query     = 1
-" <? をハイライト除外にする
-let g:php_noShortTags   = 1
 " カッコが閉じていない場合にハイライト
 let g:php_parent_error_close = 1
-
 
 "---------------------------------------------------------------------------
 " DB設定
