@@ -1,0 +1,4 @@
+# rebase
+bind main    B !git rebase -i %(commit)
+bind diff    B !git rebase -i %(commit)
+
