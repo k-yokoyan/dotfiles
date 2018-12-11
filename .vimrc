@@ -2,6 +2,7 @@
 "
 let s:is_win      = has('win32') || has('win64')
 let $MY_VIMRUNTIME = expand(s:is_win ? '~/vimfiles' : '~/.vim')
+
 "---------------------------------------------------------------------------
 " 検索の挙動に関する設定:
 "
@@ -50,7 +51,8 @@ set ruler
 set list
 " どの文字でタブや改行を表示するかを設定
 "set listchars=tab:>-,extends:<,trail:-,eol:<
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:-
+set listchars=tab:>\ ,eol:-
 " 長い行を折り返して表示 (nowrap:折り返さない)
 set wrap
 " 常にステータス行を表示 (詳細は:he laststatus)
